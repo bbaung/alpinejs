@@ -8,4 +8,9 @@ document.addEventListener('alpine:init', () => {
             this.open = ! this.open
         },
     }))
+
+    Alpine.store('curUser', {
+        items: ["Hello World!", "Hello Alpine!"]
+       
+      })
 })

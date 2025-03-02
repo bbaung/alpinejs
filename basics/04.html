@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-data , x-text , x-html</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <script src="./app.js"></script>
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>04. x-data , Data coming from Store</h1>
+
+    <div x-data x-text="$store.curUser.items"></div>    
+
+    <div x-data x-text="$store.curUser.items[0]"></div>  
+    
+    <div x-data x-text="$store.curUser.items[1]"></div>    
+
+    
+</body>
+</html>
