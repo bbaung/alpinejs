@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-data , x-text , x-html</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>02. x-data with methods</h1>
+
+
+    <div x-data="{
+        message : 'click to change',
+        change(){
+            this.message = 'message changed';
+            }
+        }">
+
+        <p x-text="message" @click="change()"></p>
+    </div>
+    
+</body>
+</html>
