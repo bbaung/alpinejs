@@ -7,13 +7,24 @@
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 
+    <style>
+        ol li{
+            list-style-type:decimal-leading-zero;
+            font-size: 20px;
+        }
+
+        a:hover{
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
     <h1>alpinejs</h1>
-    
-    <div x-data="{name : 'arjun', message : 'Hello <b>World</b>'}">
-        <p x-text="name"></p>
-    </div>
+
+    <ol>
+        <li><a href="./01.html">x-data , x-text , x-html</a></li>
+        <li><a href="">x-data with methods</a></li>
+    </ol>
 </body>
 </html>
