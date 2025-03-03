@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getters & setters</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>07. getters & setters</h1>
+
+    <p>tip: console element</p>
+
+    <div x-data="{
+            open: false,
+            get isOpen() {
+                return this.open;
+            },
+            set isOpen(value) {
+                this.open = value;
+            },
+            toggle() {
+                this.isOpen = !this.isOpen;
+                <!-- setter = getter -->
+            }
+        }">
+        <button @click="toggle" type="button">open/false</button>
+
+        <p x-show="open">Content ...</p>
+    </div>
+    
+</body>
+</html>
