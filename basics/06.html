@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scoping</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>06. scoping</h1>
+
+    <p>tip: console element</p>
+
+    <div x-data="{
+        name : 'Zara' ,
+        age : 30 ,
+        gender : 'male'
+        }">
+        <div x-data="{
+            name : 'John' ,
+            age : 25 
+            }">
+            <div x-data="{name : 'Sara'}">
+                <p x-text="name"></p>
+                <p x-text="age"></p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
