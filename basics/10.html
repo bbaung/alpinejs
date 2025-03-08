@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-for</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>10. x-for</h1>
+    
+    <div x-data="{posts:[
+        {
+            id : 1,
+            title : 'post 1'
+        },
+        {
+            id : 2,
+            title : 'post 2'
+        }
+    ]}">
+
+        <template x-for="item in posts" :key="item.id">
+            <h2 x-text="item.title + ', id is : ' + item.id"></h2>
+        </template>
+
+    </div>
+    
+
+    <a href="https://alpinejs.dev/directives/for">x-for document</a>
+
+</body>
+</html>
