@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-bind</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        p{
+            font-size: 20px;
+        }
+
+        .border{
+            border: 2px solid red;
+        }
+
+        .bg-yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>11. x-bind</h1>
+
+    <div x-data="{ open : false }">
+
+        <button class="border" x-bind:class="open ? 'bg-yellow' : ''" x-on:click="open = !open" type="button">button</button>
+
+        <div x-text="open"></div>
+
+    </div>
+
+    <div x-data="{ open : false }">
+
+        <button class="border" :class="open ? 'bg-yellow' : ''" x-on:click="open = !open" type="button">button</button>
+
+        <div x-text="open"></div>
+
+    </div>
+
+    <h2>x:bind style,knowledge not commonly use</h2>
+    
+    <div x-data="{click : false}">
+        <button type="button" style="color : purple" :style="{backgroundColor : click ? 'red' : 'grey'}" x-on:click="click = !click">button</button>
+    </div>
+
+    <h2>x:bind id</h2>
+
+    <div x-data="{id: ''}" :id="id">
+        <button x-on:click=" id = Math.round(Math.random()*10000)" type="button">add id</button>
+    </div>
+
+    <div x-data="{data: ''}" :data="data">
+        <button x-on:click=" data = Math.round(Math.random()*10000)" type="button">add data</button>
+    </div>
+</body>
+</html>
