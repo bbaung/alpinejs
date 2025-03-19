@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-effect</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>13. x-effect</h1>
+
+    <div x-data="{name: 'Zara', message: null}">
+        <div x-effect="message = 'hello ' + name"></div>
+        <p x-text="message"></p>
+
+
+        <button x-on:click="name = 'John'" type="button">Change Name</button>
+    </div>
+
+    
+</body>
+</html>
