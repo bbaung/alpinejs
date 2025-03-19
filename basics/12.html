@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-model</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>12. x-model</h1>
+
+    <div x-data="{keyword : 'laptop'}">
+        <input type="text" x-model="keyword" placeholder="name" name="name" id="">
+
+        <p x-text="keyword"></p>
+    </div>
+
+</body>
+</html>
