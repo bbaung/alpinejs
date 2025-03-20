@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-teleport</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        .container{
+            max-width: 600px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>17. x-teleport</h1>
+
+    <section x-data="{open : false}">    
+
+        <div x-data="{open : false}">
+            <button x-on:click="open = !open" type="button">toogle / no teleport</button>
+
+            <p x-show="open">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laborum qui rem et facilis ratione quod, nisi dolorum animi ipsam saepe aliquam tempora? Dicta nam ullam, deserunt nisi voluptate impedit.</p>
+        </div>
+        
+        <h2>Another content</h2>
+
+        <div>
+            <button x-on:click="open = !open" type="button">toogle / teleport</button>
+
+            <template x-teleport="body .container">
+                <p x-show="open">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laborum qui rem et facilis ratione quod, nisi dolorum animi ipsam saepe aliquam tempora? Dicta nam ullam, deserunt nisi voluptate impedit.</p>
+            </template>
+        </div>
+        
+        <h2>Another content</h2>
+
+        <div x-show="open" class="container">
+            
+        </div>
+
+    </section>
+
+    
+</body>
+</html>
