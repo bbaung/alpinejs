@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$root</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <a href="./index.html">back to index.html</a>
+
+    <h1>$root</h1>
+
+    <p>observe with console</p>
+
+    <div>hello</div>
+
+    <h2>$root is a magic property that can be used to retrieve the root element of any Alpine component. In other words the closest element up the DOM tree that contains x-data.</h2>
+
+    <div x-data>
+        <div class="first-contaier">
+            <div class="second-container">
+                <div class="third-container">
+                    <button x-on:click="(console.log($root))" type="button">click</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div x-data>
+        <div class="first-contaier">
+            <div x-data class="second-container">
+                <div class="third-container">
+                    <button x-on:click="(console.log($root))" type="button">click</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
