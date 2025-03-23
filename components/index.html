@@ -36,7 +36,7 @@
                 </svg>                
             </button>
 
-            <ul x-show="open" class="bg-white w-[160px] shadow py-1">
+            <ul x-show="open" @click.outside="open = false" class="bg-white w-[160px] shadow py-1">
                 <li>
                     <a href="#open" class="py-1 px-2 flex w-full items-center hover:bg-gray-200">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mr-1">
