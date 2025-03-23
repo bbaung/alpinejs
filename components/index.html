@@ -152,5 +152,47 @@
 
 
     </section>
+
+    <section name="modal-component" class="container-1720 mx-auto my-5">
+        <h2 class="text-xl mb-5">4. accordion component</h2>
+
+        <div x-data="{
+                        items : [
+                            { title : 'Item 1' , body : 'Body 1 lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto esse, consectetur corporis vitae ea tenetur necessitatibus aliquam est, quis exercitationem delectus itaque ex voluptatum assumenda ut aspernatur ipsam? Veniam, blanditiis.'},
+                            { title : 'Item 2' , body : 'Body 2 lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto esse, consectetur corporis vitae ea tenetur necessitatibus aliquam est, quis exercitationem delectus itaque ex voluptatum assumenda ut aspernatur ipsam? Veniam, blanditiis.'},
+                            { title : 'Item 3' , body : 'Body 3 lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto esse, consectetur corporis vitae ea tenetur necessitatibus aliquam est, quis exercitationem delectus itaque ex voluptatum assumenda ut aspernatur ipsam? Veniam, blanditiis.'},
+                            { title : 'Item 4' , body : 'Body 4 lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto esse, consectetur corporis vitae ea tenetur necessitatibus aliquam est, quis exercitationem delectus itaque ex voluptatum assumenda ut aspernatur ipsam? Veniam, blanditiis.'}
+                        ],
+                        activeItem : null,
+                        selectItem(item){
+                            if(this.activeItem === item){
+                                this.activeItem = null;
+                            }else{
+                                this.activeItem = item;
+                            }
+                        }
+                    }">
+
+            <template x-for="item in items" :key="item">
+                <div>
+                    <div    x-on:click="selectItem(item)"
+                            class="bg-white border-b border-black/50 px-3 text-xl font-medium flex justify-between items-center cursor-pointer transition-all">
+                        <p x-text="item.title"></p>
+
+                        <svg :class="activeItem === item ? 'rotate-90' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 transition-all">
+                            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+                        </svg>
+                          
+                    </div>
+
+                    <div    
+                            x-show="activeItem === item"
+                            x-text="item.body" class=" bg-white border-b border-black/70 px-3">
+                    </div>
+                </div>
+            </template>
+
+        </div>
+    </section>
 </body>
 </html>
