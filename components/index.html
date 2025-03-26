@@ -18,6 +18,15 @@
 
         [x-cloak] { display: none !important; }
 
+        .progress{
+            animation: progress 3000ms linear forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 50%; }
+            100% { width: 100%; }
+        }
+
     </style>
 
 </head>
@@ -191,6 +200,45 @@
                     </div>
                 </div>
             </template>
+
+        </div>
+    </section>
+
+    <section name="notification-component" class="container-1720 mx-auto my-5">
+
+        <h2 class="text-xl mb-5">5. notification component</h2>
+
+        <div    x-data="{ 
+                    visible : true ,
+                    timeout : 3000 }"
+                
+                x-init="setTimeout(() => { 
+                            visible = false 
+                            }, timeout); 
+                            
+                        $watch('visible', value => { 
+                        if(value == true) setTimeout(() => { visible = false }, timeout); 
+                        })"
+             
+                class="">
+            
+            <button x-on:click="visible = true" class="p-3 bg-yellow-400 hover:opacity-80 mb-4 rounded-lg" type="button">show noti button</button>
+
+            <div x-show="visible" class="bg-green-400 relative">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" x-on:click="visible = false" class="size-6 absolute top-2 right-2 bg-white">
+                    <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                </svg>
+                  
+
+                <p class="text-xl font-medium pt-5 pb-2 px-5">Notification title</p>
+
+                <p class="px-5 pb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum consequatur distinctio nulla nesciunt alias amet, mollitia quaerat molestiae placeat tempore consequuntur fugit quos neque nobis cumque esse iusto aliquam at?</p>
+
+                <!-- progress -->
+                <div :class=" visible ? 'progress' : ''" class="bg-gray-500 min-h-2 rounded-l-lg rounded-r-lg"></div>
+
+            </div>
 
         </div>
     </section>
